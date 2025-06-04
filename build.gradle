@@ -13,5 +13,9 @@ dependencies {
 application {
     mainClass = 'org.example.Main'
 }
+task copyWebsite(type: Copy) {
+    from 'src/main/resources/website'
+    into 'docs'
+}
 
 
