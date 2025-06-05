@@ -16,6 +16,7 @@ dependencies {
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.28.1' // use the latest stable
     version
     testImplementation 'org.testng:testng:7.4.0' // use the latest stable version
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
 
 application {
