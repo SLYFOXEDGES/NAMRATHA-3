@@ -18,6 +18,9 @@ dependencies {
     testImplementation 'org.testng:testng:7.4.0' // use the latest stable version
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
+test {
+    useTestNG()
+}
 
 application {
     mainClass = 'org.example.Main'
@@ -52,33 +55,33 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.assertTrue;
+
 public class WebpageTest {
-
     private static WebDriver driver;
-
     @BeforeTest
     public void openBrowser() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         Thread.sleep(2000);
-        driver.get("https://slyfoxedges.github.io/NAMRATHA-3/");
-    }
+        driver.get("https://slyfoxedges.github.io/NAMRATHA-2/"); // "Note: You should
 
+    }
     @Test
-    public void titleValidationTest() {
+    public void titleValidationTest(){
         String actualTitle = driver.getTitle();
         String expectedTitle = "Welcome to My Simple Website";
         Assert.assertEquals(actualTitle, expectedTitle);
         assertTrue(true, "Title should contain 'Welcome to My Simple Website'");
     }
-
     @AfterTest
     public void closeBrowser() throws InterruptedException {
         Thread.sleep(1000);
         driver.quit();
     }
 }
+
 
 run in terminal 
 git init
